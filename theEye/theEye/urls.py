@@ -24,6 +24,6 @@ from django.conf.urls import url
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', obtain_jwt_token),
-    path('', views.event_list),
+    path('', admin.site.urls),
     url(r'^api/event_list/$', views.event_list),
 ]

@@ -6,12 +6,12 @@ from django.utils import timezone
 from jsonfield import JSONField
 
 
-
 class Events(models.Model):
     session_id = models.CharField(max_length=100)
     category = models.CharField(max_length=100)
+    data = models.JSONField(default="{}")
     name = models.CharField(max_length=100)
-    data = JSONField()
+
     timestamp = models.DateTimeField(default=timezone.now)
 
     class Meta:
@@ -19,3 +19,4 @@ class Events(models.Model):
         unique_together = [
             ["category", "name"],
         ]
+

@@ -1,10 +1,12 @@
+from django.utils.decorators import method_decorator
 from rest_framework import status
 from rest_framework.decorators import api_view
 from django.views.decorators.csrf import csrf_exempt
 from .serializers import *
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
-
+from rest_framework import generics, permissions
+from django.views.decorators.cache import cache_page
 
 
 @csrf_exempt
@@ -22,3 +24,5 @@ def event_list(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
