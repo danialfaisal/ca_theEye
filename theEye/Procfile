@@ -1,0 +1,2 @@
+web: gunicorn theEye.wsgi --log-file -
+
