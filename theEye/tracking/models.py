@@ -16,6 +16,6 @@ class Events(models.Model):
 
     class Meta:
         ordering = ["-timestamp"]
-        index_together = [
+        unique_together = [
             ["category", "name"],
         ]
