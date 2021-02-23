@@ -4,6 +4,8 @@ A Django RestFul service designed to organize User activity data. Application de
 
 https://ca-event-tracking.herokuapp.com/
 
-Superuser
-username:superuser
-password:superuser
+**Superuser Credentials:**
+
+username:  _superuser_
+
+password:  _superuser_
